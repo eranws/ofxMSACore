@@ -9,8 +9,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <math.h>
 
 using namespace std;
+
+#define _USE_MATH_DEFINES
 
 namespace msa {
 	
@@ -64,6 +67,7 @@ namespace msa {
 		static float randFloat(float f)								{	return ofRandom(0, f);	}
 		static float randFloat(float a, float b)					{	return ofRandom(a, b);	}
 		
+		#define M_PI       3.14159265358979323846
 		//! returns a random Vec3f that represents a point on the unit circle
 		static Vec3f randVec3f() {
 			float phi = randFloat( (float)M_PI * 2.0f );
@@ -79,6 +83,7 @@ namespace msa {
 		
 		//! returns a random Vec2f that represents a point on the unit circle
 		static Vec2f randVec2f() {
+
 			float theta = randFloat( (float)M_PI * 2.0f );
 			return Vec2f( cos( theta ), sin( theta ) );
 		}
